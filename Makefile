@@ -1,9 +1,16 @@
-.PHONY: server css
-	
-server:
-	browser-sync start --server --files "css/*.css, *.html"
+PATH  := node_modules/.bin:$(PATH)
+SHELL := /bin/bash
 
+.PHONY: css
 css:
 	mkdir -p bundle
-	postcss --watch --use autoprefixer  --use postcss-import css/app.css --output bundle/app.css
+	postcss --watch --use autoprefixer --use postcss-import css/app.css --output bundle/app.css
 
+.PHONY: server
+server:
+	browser-sync start --server --files='index.html,bundle/app.css'
+
+
+.PHONY: clean
+clean:
+	rm -r bundle
