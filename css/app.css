@@ -1,11 +1,24 @@
 @import "../node_modules/normalize.css/normalize.css";
-* {
-  position: relative;
-  display: flex;
+
+
+div, span {
   box-sizing: border-box;
+  position: relative;
+
+  display: flex;
   flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  align-content: flex-start;
+
+  border: 0 solid black;
+  margin: 0;
+  padding: 0;
 }
 
+html,body{
+	height: 100%;
+}
 body {
   background-color: #1F1E34;
   color: #FFF;
@@ -32,6 +45,7 @@ p {
 a {
   font-weight: 400;
   color: #FFF;
+  text-decoration: none;
 }
 
 a:hover {
@@ -41,6 +55,99 @@ a:hover {
 }
 
 .section {
-  background-color: rgba(255,0,0,0.3);
-  border: 2px solid #FFF;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+  height: 100%;
+}
+
+.hello{
+	flex-direction:column;
+}
+
+#intro-section {
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#intro-section h1,#intro-section img,#intro-section .nav{
+  position: relative;
+  z-index: 100;
+}
+
+.overlay {
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav{
+  display: flex;
+	flex-direction:row;
+	position: relative;
+  box-sizing: border-box;
+	align-items:center;
+	justify-content:center;
+}
+
+.nav a{
+	padding: 0 20px;
+}
+
+.iphone-demo {
+  flex:1;
+}
+
+.feature-description {
+  flex:1;
+  padding-right: 50px;
+}
+
+.preview{
+  position: relative;
+  width: 300px;
+  height: 632px;
+  align-self:center;
+}
+
+.preview-img{
+  position: absolute;
+  top: 90px;
+  left: 25px;
+}
+.fe-android{
+  overflow: hidden;
+}
+.android-icon{
+  position: absolute;
+  right: -100px;
+  bottom: -120px;
+  transform:rotate(-45deg);
+}
+
+
+#slider-control {
+  padding: 3px;
+  position: fixed;
+  right: 10px;
+  bottom: 50%;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
 }
