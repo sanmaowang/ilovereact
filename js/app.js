@@ -27,7 +27,7 @@ function updateSliderControl(){
 		var link = links[i];
 		var section = document.querySelector(link.getAttribute("href"));
 		var sectionTop = section.offsetTop;
-		var sectionBottom = section.scrollHeight + sectionTop;
+		var sectionBottom = window.innerHeight + sectionTop;
 		if(window.scrollY >= sectionTop && window.scrollY < sectionBottom){
 			link.className = "active";
 		}else{
@@ -58,6 +58,30 @@ function addSmoothScrolling(){
 	}
 }
 
+function addScrollMagic(){
+	var controller = new ScrollMagic.Controller();
+
+	var fademask = new ScrollMagic.Scene({
+		triggerElement : "#native",
+		triggerHook: "onEnter",
+	  duration: "100%"
+	}).setTween("#fading-mask",1,{opacity:"1"}).addTo(controller);
+
+	// TweenMax.to("#iphone-overlay",1,{width:"50%",y:0});
+	var iphonemask = new ScrollMagic.Scene({
+		triggerElement : "#native",
+		triggerHook: "onEnter",
+	  duration: "100%"
+	}).setTween("#iphone-overlay",1,{width:"50%",y:0}).addTo(controller);
+
+	var piniPhone  = new ScrollMagic.Scene({
+		triggerElement: "#native",
+		triggerHook:"onLeave",
+		duration:"100%"
+	}).setPin("#iphone-overlay").addTo(controller);
+}
+
+
 window.onscroll = function(){
 	updateSliderControl();
 }
@@ -67,4 +91,5 @@ window.onload = function() {
   animateRobot();
   updateSliderControl();
   addSmoothScrolling();
+  addScrollMagic();
 };
