@@ -122,10 +122,13 @@ a:hover {
 .fe-android{
   overflow: hidden;
 }
-.android-icon{
+.android-robot{
   position: absolute;
-  right: -100px;
-  bottom: -120px;
+  right: 0;
+  bottom: 0;
+  transform:translate(50%,50%);
+}
+.android-icon{
   transform:rotate(-45deg);
 }
 

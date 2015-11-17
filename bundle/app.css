@@ -598,10 +598,15 @@ a:hover {
 .fe-android{
   overflow: hidden;
 }
-.android-icon{
+.android-robot{
   position: absolute;
-  right: -100px;
-  bottom: -120px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform:translate(50%,50%);
+      -ms-transform:translate(50%,50%);
+          transform:translate(50%,50%);
+}
+.android-icon{
   -webkit-transform:rotate(-45deg);
       -ms-transform:rotate(-45deg);
           transform:rotate(-45deg);

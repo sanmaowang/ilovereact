@@ -12,5 +12,8 @@
     "autoprefixer": "^6.0.2",
     "postcss-cli": "^2.1.0",
     "postcss-import": "^7.0.0"
+  },
+  "dependencies": {
+    "gsap": "^1.18.0"
   }
 }
